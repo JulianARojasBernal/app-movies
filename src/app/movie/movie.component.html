@@ -1,0 +1,29 @@
+<div class="container">
+
+<h1> DETALLE PELICULA</h1>
+<br>
+<button [routerLink]="'/movies'" class="btn btn-primary"> Regresar</button>
+<br>
+<br>
+<div class="row" *ngIf="movie$ | async ; let movie">
+    <div class="col-4">
+        <img [src]="movie.cover" alt="Portada" class="img-fluid">
+    </div>
+    
+    <div class="col-8" >
+        <h2>{{movie.title}}</h2>
+        <H3>Año de Lanzamiento: {{movie.year}} </H3>
+        <h3>Reseña:</h3>
+        <p>{{movie.synopsis}}</p>
+        
+        <div class="d-grid gap-2 d-md-block" *ngFor="let movie of movies$| async" > </div>        
+        <button class="btn btn-success" [routerLink]="['/movie-form', movie.id]"> EDITAR </button> 
+        <br>
+        <br>
+        <button class="btn btn-danger" (click)="deleteMovie(movie.id)" [routerLink]="'/movies'"> BORRAR </button>
+                
+    </div>
+
+
+
+</div>

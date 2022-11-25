@@ -1,0 +1,72 @@
+<div class= "container">
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      
+        <div class="carousel-item active">
+        <img src="assets/img/baner1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <img src="assets/img/baner2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <img src="assets/img/baner3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+ <h1 class="text-center"> LISTADO DE PELICULAS RECIENTES</h1>
+<br>
+<br>
+
+<button class="btn btn-primary" [routerLink]="['/movie-form', 0]"> AGREGAR PELICULA </button>
+<br>
+<br>
+<div class="table-responsive-md">
+  <table class="table table-dark table-striped table-bordered border-primary">   
+    <thead class="table-dark">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">IMAGEN</th>
+            <th class="text-center">PELICULAS</th>
+            <!-- <th>Acciones</th> -->
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let movie of movies$| async" >          
+            <td> <h1 class="text-center"> {{movie.id}} </h1> </td>
+            <td><img [src]="movie.cover" alt="Portada" class="img-fluid" width="100px"></td>
+            <td [routerLink]="'/movie/'+movie.id" > <h2 class="text-center" type="button"> {{movie.title}} </h2>  </td>
+
+            <!-- <td>
+              <button class="btn btn-info" [routerLink]="'/movie/'+movie.id"> VER DETALLES </button> 
+            </td> -->
+        </tr>
+    </tbody>
+
+
+  </table>
+</div>
+</div>

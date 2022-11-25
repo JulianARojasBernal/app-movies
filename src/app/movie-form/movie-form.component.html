@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="text-center"> AGREGAR O EDITAR UNA NUEVA PELICULA</h1>
+    <br>
+    <h2 class="text-center">FORMULARIO</h2>
+    <br>
+    <button class="btn btn-primary" [routerLink]="'/movies'"> REGRESAR </button>
+    <hr />
+
+    <form [formGroup]="movieForm" (ngSubmit)="onSubmit(movieForm)">
+        <div class="form-group">
+            <label> <h3 >Nombre pelicula</h3></label>
+            <input class="form-control"  type="text" formControlName="title" />
+        </div>
+        <div class="form-group">
+            <label> <h3>Año de Lanzamiento</h3></label>
+            <input class="form-control"  type="number" formControlName="year"/>
+        </div>
+        <div class="form-group">
+            <label> <h3>Reseña</h3></label>
+            <input class="form-control"  type="text" formControlName="synopsis" />
+        </div>
+        <div class="form-group">
+            <label> <h3>Imagen</h3></label>
+            <input class="form-control"  type="text" formControlName="cover" />
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit"> GUARDAR </button>
+
+    </form>
+
+    
+</div>
