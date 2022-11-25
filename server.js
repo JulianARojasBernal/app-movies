@@ -5,7 +5,7 @@
  app.use(express.static(__dirname+'/dist/app_catalago'));
 
  app.get('/*', (req, resp) =>{
-    resp.sendFile(__dirname+'/dist/app_catalago/index.html');
+    resp.sendFile(__dirname+'/dist/app_catalago/index.php');
 
  });
 
