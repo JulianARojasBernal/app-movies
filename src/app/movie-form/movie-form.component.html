@@ -8,20 +8,20 @@
 
     <form [formGroup]="movieForm" (ngSubmit)="onSubmit(movieForm)">
         <div class="form-group">
-            <label> <h3 >Nombre pelicula</h3></label>
-            <input class="form-control"  type="text" formControlName="title" />
+            <label> <h3 >Nombre Pelicula</h3></label>
+            <input class="form-control"  type="text" placeholder="Nombre Pelicula" formControlName="title" />
         </div>
         <div class="form-group">
             <label> <h3>Año de Lanzamiento</h3></label>
-            <input class="form-control"  type="number" formControlName="year"/>
+            <input class="form-control"  type="number" placeholder="Año de Lanzamiento" formControlName="year"/>
         </div>
         <div class="form-group">
             <label> <h3>Reseña</h3></label>
-            <input class="form-control"  type="text" formControlName="synopsis" />
+            <input class="form-control"  type="text" placeholder="Reseña" formControlName="synopsis" />
         </div>
         <div class="form-group">
             <label> <h3>Imagen</h3></label>
-            <input class="form-control"  type="text" formControlName="cover" />
+            <input class="form-control"  type="text" placeholder="Ingresa una URL" formControlName="cover" />
         </div>
         <br>
         <button class="btn btn-primary" type="submit"> GUARDAR </button>
